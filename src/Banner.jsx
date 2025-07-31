@@ -7,6 +7,7 @@ function Banner() {
         <div class="text-xl py-2 text-green-700 font-bold text-center">
             We are here to learn React from tapaScript 
         </div>
+        <p>this is github branch 02-code-environment </p>
     </div>
   )
 }
