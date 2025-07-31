@@ -1,8 +1,8 @@
-import Banner from "./Banner"
+import Boimela from "./Boimela"
 
-function App() {
+function App ()  {
   return (
-    <Banner/>
+    <Boimela />
   )
 }
 
