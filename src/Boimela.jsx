@@ -4,10 +4,10 @@ import Search from "./Search";
 
 export default function Boimela() {
   return (
-    <>
+    <div className="mx-auto p-4">
         <Header/>
         <Search/>
         <BookList/>
-    </>
+    </div>
   )
 }
