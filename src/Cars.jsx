@@ -1,4 +1,4 @@
-import BookList from "./BookList";
+import CarList from "./CarList";
 import Header from "./Header";
 import Search from "./Search";
 
@@ -7,7 +7,7 @@ export default function Cars() {
     <div className="mx-auto p-4">
         <Header/>
         <Search/>
-        <BookList/>
+        <CarList/>
     </div>
   )
 }
