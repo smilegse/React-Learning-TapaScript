@@ -4,6 +4,16 @@ This is Car List App, you can find cars by is category.
 
 App link : https://react-learning-tapa-script-r78q6wktu-smile-gses-projects.vercel.app/
 
-## Expanding the ESLint configuration
+## Break down of logical structure of components:
+- Main component
+  - App component
+    - Cars component
+      - Header
+      - Search
+      - CarList
+        - CarDetails
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Component Hierarchy Diagram
+
+<img width="597" height="444" alt="image" src="https://github.com/user-attachments/assets/7bed7c77-60aa-4b13-8ce6-6963d78366ff" />
+
