@@ -12,10 +12,12 @@ function CarList () {
     ];
 
     return (
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {
-                CARS.map((car) => (                     
-                    <CarDetails car={car} />
+                CARS.map((car) => (     
+                    <div key={car.id} className="bg-gray-100 border border-gray-300 shadow-lg rounded-lg p-4">                 
+                    <CarDetails  car={car} />
+                </div>
                 ))
             }
         </div>
@@ -24,6 +26,7 @@ function CarList () {
 
 CarDetails.propTypes = {
     car: PropTypes.shape({
+        id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
         brand: PropTypes.string.isRequired,
         year: PropTypes.number.isRequired,

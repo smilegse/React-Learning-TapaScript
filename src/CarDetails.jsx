@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 function CarDetails({car}) {
   return (    
-    <div key={car.id} className="bg-gray-100 border border-gray-300 shadow-lg rounded-lg p-4"> 
+    <>
         <h2 className='text-lg font-semibold'>Title: {car.title}</h2>
         <p><span className='font-semibold'> Brand: </span> {car.brand}</p>
         <p><span className='font-semibold'> Year: </span> {car.year}</p>
@@ -11,11 +11,12 @@ function CarDetails({car}) {
           <span className='font-semibold'> Premium: </span> 
             {car.isPremium?'Yes': 'No'}
           </p>
-    </div>
+    </>
   )
 }
 
 CarDetails.propTypes = {
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     brand: PropTypes.string.isRequired,
     year: PropTypes.number.isRequired,
