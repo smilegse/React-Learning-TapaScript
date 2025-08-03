@@ -1,8 +1,9 @@
-import Boimela from "./Boimela"
+
+import Cars from "./Cars"
 
 function App ()  {
   return (
-    <Boimela />
+    <Cars />
   )
 }
 
