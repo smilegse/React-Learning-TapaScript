@@ -4,7 +4,7 @@ This is Car List App, you can find cars by is category.
 
 App link : https://react-learning-tapa-script-r78q6wktu-smile-gses-projects.vercel.app/
 
-## Screenshoot 
+## Screenshot 
 <img width="1585" height="700" alt="image" src="https://github.com/user-attachments/assets/bf78efe9-bbd5-40bd-a004-3435a0de4caf" />
 
 
