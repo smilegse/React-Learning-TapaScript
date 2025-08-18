@@ -1,37 +1,35 @@
 import CarDetails from "./CarDetails"
 import PropTypes from 'prop-types'
 
-function CarList ({cars,searchTerm,isCheckedPremium}) {
-    const rows = [];
-    cars.forEach((car) => {
+function CarList ({cars,searchTerm,isPremiumOnly}) {
         
-
-        if(car.title.toLowerCase().indexOf(searchTerm.toLowerCase())===-1){
-            return;
-        }
-        rows.push(<CarDetails key={car.id} car={car} />)
-    })
+    const filteredCars = cars.filter(car => {
+        if (isPremiumOnly && !car.isPremium) return false;
+        return car.title.toLowerCase().includes(searchTerm.toLowerCase());
+    });
 
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-            {
-                rows
-            }
+            {filteredCars.map(car => (
+                <CarDetails key={car.id} car={car} />
+            ))}
         </div>
     )
 }
 
-CarDetails.propTypes = {
-    car: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        title: PropTypes.string.isRequired,
-        brand: PropTypes.string.isRequired,
-        year: PropTypes.number.isRequired,
-        price: PropTypes.number.isRequired,
-        isPremium: PropTypes.bool.isRequired,        
-    }).isRequired,
-    searchTerm: PropTypes.string.isRequired,
-    isCheckedPremium: PropTypes.bool.isRequired,
+CarList.propTypes = {
+  cars: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      brand: PropTypes.string.isRequired,
+      year: PropTypes.number.isRequired,
+      price: PropTypes.number.isRequired,
+      isPremium: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
+  searchTerm: PropTypes.string.isRequired,
+  isPremiumOnly: PropTypes.bool.isRequired,
 };
 
 export default CarList

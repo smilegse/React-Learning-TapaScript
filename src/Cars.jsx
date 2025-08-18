@@ -14,15 +14,15 @@ export default function Cars() {
   ];
 
   const [searchTerm, setSearchTerm] = useState("")
-  const [isCheckedPremium, setIsCheckedPremium] = useState(false);
+  const [isPremiumOnly, setIsPremiumOnly] = useState(false);
 
   return (
     <div className="mx-auto p-4">
         <Header/>
         <Search searchTerm={searchTerm} onSearchCar={setSearchTerm} 
-            isCheckedPremium={isCheckedPremium} onCheckChange={setIsCheckedPremium} 
+            isPremiumOnly={isPremiumOnly} onCheckChange={setIsPremiumOnly} 
         />
-        <CarList searchTerm={searchTerm} cars={CARS}/>
+        <CarList searchTerm={searchTerm} cars={CARS} isPremiumOnly={isPremiumOnly}/>
     </div>
   )
 }

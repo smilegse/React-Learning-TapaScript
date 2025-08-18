@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-function Search({searchTerm, onSearchCar, isCheckedPremium}) {
+function Search({searchTerm, onSearchCar, isPremiumOnly, onCheckChange}) {
   return (
     <div className="flex">
       <form>
@@ -10,7 +10,10 @@ function Search({searchTerm, onSearchCar, isCheckedPremium}) {
           onChange={(event)=> onSearchCar(event.target.value)}
         />
         <span className="font-semibold p-1 px-3">
-          <input type='checkbox' checked={isCheckedPremium} /> Show premium only
+          <input type='checkbox' 
+            checked={isPremiumOnly} 
+            onChange={(event) => onCheckChange(event.target.checked) }
+          /> Show premium only
         </span>
       </form>      
     </div>    
@@ -20,6 +23,8 @@ function Search({searchTerm, onSearchCar, isCheckedPremium}) {
 Search.propTypes = {
   searchTerm: PropTypes.string.isRequired,
   onSearchCar: PropTypes.func.isRequired,
+  isPremiumOnly: PropTypes.bool.isRequired,
+  onCheckChange: PropTypes.func.isRequired,
 }
 
 export default Search
